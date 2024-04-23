@@ -1,0 +1,9 @@
+*.vs/
+bin/
+obj/
+.idea/
+*.aux
+*.dvi
+*.log
+*.pdf
+*.fls

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <TexFileName>demo</TexFileName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Watch Remove="**\*.*"/>
+    <Watch Include="**\*.tex"/>
+  </ItemGroup>
+
+  <Target Name="BuildTex" AfterTargets="Build">
+    <Exec Command="uplatex $(TexFileName).tex"/>
+    <Exec Command="dvipdfmx $(TexFileName).dvi"/>
+  </Target>
+
+</Project>

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"bin/": true,
+			"obj/": true,
+			"temp/": true,
+			".vs": true,
+			".idea": true,
+			"*.aux": true,
+			"*.dvi": true,
+			"*.log": true,
+			"*.fls": true
+		},
+	}
+}

@@ -1,0 +1,95 @@
+% 文字コードはUTF-8にする
+\documentclass[10.5pt,uplatex,a5paper]{jsarticle} % uplatexオプションを入れる
+\usepackage[scale=.8]{geometry}      % ページレイアウトを変更してみる
+\usepackage[T1]{fontenc}             % T1エンコーディングにしてみる
+\usepackage{txfonts}                 % 欧文フォントを変えてみる
+\usepackage{plext}                   % pLaTeX付属の縦書き支援パッケージ
+\usepackage{okumacro}                % jsclassesに同梱のパッケージ
+\usepackage{graphicx}
+
+
+\begin{document}
+
+
+\pagestyle{empty}
+\setlength\parindent{0pt}
+
+\newcommand{\absoluteFx}[0]{\int_{a + \xi}^b |f(x)| dx}
+
+
+
+
+\begin{center}
+    \textbf{$\S$ 10.　広 義 積 分}
+\end{center}
+
+
+
+\begin{center}
+    
+    $\absoluteFx \leqq\int_{a+\xi}^b\frac{L}{(x-a)^\lambda}dx=L\left[\frac{(x-a)^{1-\lambda}}{1-\lambda}\right]_{\lambda+a}^b$
+    
+    $=L\{ \frac{(b-a)^{1-\lambda}}{1-\lambda}-\frac{\lambda^{1-\lambda}}{1-\lambda}\}\leqq\frac{L(b-a)^{1-\lambda}}{1-\lambda}$.
+   
+\end{center}
+
+
+
+
+つまり  $\absoluteFx$    は $\xi \rightarrow 0$のとき単調増加で上に有界だから
+
+
+\begin{center}
+    $\lim\limits_{\xi \to 0} \absoluteFx$
+\end{center}
+
+
+は存在する.よって広義積分 $\int_a^b f(x)dx$ は絶対収束する.
+
+
+（２）仮定とり　ある定数Lが存在して $x^\lambda|f(x)|\leqq L$,よって十分大きいなMに対して
+
+
+\begin{center}
+
+    $\int_a^M |f(x)|dx \leqq \int_a^M \frac{L}{x^\lambda}dx=\left[\frac{Lx^{1-\lambda}}{1-\lambda}\right]_a^M$
+
+    $=L\{\frac{M^{1-\lambda}}{\lambda}-\frac{a^{1-\lambda}}{1-\lambda}\}\leqq\frac{La^{1-\lambda}}{1-\lambda}$.
+
+\end{center}
+
+
+(1)と同様に,
+
+\begin{center}
+
+    $\lim\limits_{M \to \infty}\int_a^M|f(x) |dx$
+
+\end{center}
+
+は存在する.よって広義積分$\int_a^\infty f(x)dx $　は絶対収束する. $\Diamond$
+
+この定理より,直ちに次の判定のための十分条件が得られる.
+
+\textbf{定理１０.２}（１） $f(x)$ は区間$(a,b] (または区間[a,b)$ )で連続とする.を満たすに対して. 0 < $\lambda$ < 1を満たす$\lambda$に対して
+
+\begin{center}
+
+    $\lim\limits_{x \to a} (x-a)^{\lambda}f(x) （または　\lim\limits_{x \to b} (b-x)^{\lambda}f(x)）$
+    
+\end{center}
+
+が存在するならば広義積分$\int_a^b f(x) dx$ は絶対収束する.
+
+（２）f(x)は区間$[a,\infty]$または区間$(-\infty,a])$で連続とする.1<$\lambda$を満たす$\lambda$に対して
+
+\begin{center}
+
+    $\lim\limits_{x \to \infty} x^{\lambda}f(x) （または　\lim\limits_{x \to -\infty} (-x)^{\lambda}f(x)）$
+    
+\end{center}
+
+が存在するならば広義積分 $\int_a^\infty f(x)dx$　または　$\left(\int_{-\infty}^a f(x)dx\right)$　は絶対収束する.$\Diamond$
+
+
+\end{document}
