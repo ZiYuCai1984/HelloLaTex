@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <TexFileName>demo</TexFileName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,8 +10,13 @@
   </ItemGroup>
 
   <Target Name="BuildTex" AfterTargets="Build">
-    <Exec Command="uplatex $(TexFileName).tex"/>
-    <Exec Command="dvipdfmx $(TexFileName).dvi"/>
+    <Exec Command="uplatex demo.tex"/>
+    <Exec Command="dvipdfmx demo.dvi"/>
+
+    <Exec Command="lualatex example_organic_chemistry_report.tex"/>
+    <Exec Command="lualatex Commands.tex"/>
+
+    <Exec Command="pdfunite demo.pdf example_organic_chemistry_report.pdf Commands.pdf result.pdf"/>
   </Target>
 
 </Project>

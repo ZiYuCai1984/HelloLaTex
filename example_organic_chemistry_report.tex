@@ -1,0 +1,22 @@
+\documentclass{ltjsarticle}
+\usepackage{chemfig}
+%\usepackage[top=2.5cm, bottom=2cm]{geometry} %余白調整用
+\pagestyle{empty} %ページを振らない
+\begin{document}
+\begin{center}
+  \LARGE{有機化学レポート}
+\end{center}
+\rightline{12345678\quad 武威 有琉}
+\section*{備考}
+本稿執筆に際しては\LaTeX を使用し、構造式のソースコードを脚注に記した。
+%以下を解き、A4用紙1枚にまとめよ。答えのみでよい。
+%問1 生理的pHを有効数字2桁で記せ。
+\section*{問1.}
+$\mathrm{pH}=7.4$
+%問2 生理的pHにおけるAsnの構造式を記せ。L体/D体は区別しなくてよい。
+\section*{問2.}
+\begin{center}
+  \framebox{\chemfig[atom style={scale=1.5}]{H_3N^+ - CH (-[6] CH_2 -[6] C (=[5] O) -[7,1] NH_2) - COO^{-}}}
+  \footnote{\verb|\chemfig[atom style={scale=1.5}]{H_3N^+ - CH (-[6] CH_2 -[6] C (=[5] O) -[7,1] NH_2) - COO^{-}}|}
+\end{center}
+\end{document}

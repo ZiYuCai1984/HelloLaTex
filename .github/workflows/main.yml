@@ -5,24 +5,22 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  build:
+  container-texlive:
     runs-on: ubuntu-latest
-
-    steps:     
+    container: ghcr.io/dante-ev/texlive:edge
+    steps:
     - name: Set up Git repository
       uses: actions/checkout@v2
 
-    - name: Docker build
-      run: docker build -t temp .
+    - name: Release
+      run: chmod +x ./release.sh && ./release.sh
 
-    - name: Docker run
-      run: docker run temp
-
-    - name: Archive generated PDF file
-      uses: actions/upload-artifact@v4
+    - name: Create Release
+      uses: ncipollo/release-action@v1.14.0
       with:
-        name: /demo.pdf
-        path: /demo.pdf
+          artifacts: "result.pdf"
+          bodyFile: "README.md"
+          token: ${{ secrets.TOKEN }}
 
 
 

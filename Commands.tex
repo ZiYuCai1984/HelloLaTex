@@ -1,0 +1,49 @@
+\documentclass[a4paper,11pt,titlepage]{ltjsarticle} %titlepage：タイトルと本文(目次含む)のページ分割コマンド
+
+\usepackage{type1cm} %フォントサイズの制限解除
+\usepackage{indentfirst} %字下げの不具合解消
+\usepackage{ulem} %\underline{}
+\usepackage{hyperref} %\url
+\makeindex %部節段落のデータベース化
+\parindent = 0pt %改行時の字数下げ幅の指定 指定無しだと通常(一文字)の字下げ
+
+
+\begin{document}
+
+
+\title{title} %タイトルを入力
+\author{author} %著者名を入力
+\date{date} %日付を入力 \todayはコンパイル時の年月日
+\maketitle %タイトル作成
+
+\tableofcontents %目次自動作成
+
+
+\newpage %強制改ページコマンド
+
+%ここから本文
+\part{partname} %部(省略可能)
+\section{sectionname} %節
+\subsection{subsectionname} %小節
+\subsubsection{subsubsectionname} %小小節
+\paragraph{paragraphname} %段落
+\subparagraph{subparagraphname} %小段落
+
+\underline{linedtext}
+\footnote{notetext} %\footnote[number]{notetext} [number]省略可
+nonlinedtext
+
+From \cite{keyname1}: %\cite[text]{keylist} [text]省略可
+\begin{quote}
+  hogehoge said "fugafuga."\\
+  \emph{fugafuga said "HOGEHOGE!"}\\ %強調*jsarticleなど，日本語環境では下線；英語環境では斜線
+\end{quote}
+
+
+\begin{thebibliography}{99} %参考文献データベース&表示 {}中の数字は文献のナンバリングの上限数
+  \bibitem{keyname1} author『booktitle』（Publisher、YYYY年）
+  \bibitem{keyname2} 『pagetitle』（\url{URL}）「sitename」（YYYY年M月D日閲覧）
+\end{thebibliography}
+
+
+\end{document}
